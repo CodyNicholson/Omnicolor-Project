@@ -1,0 +1,30 @@
+<md-content layout-padding layout="column">
+   <div flex class="omniwrapper">
+      <div flex></div>
+      <h1 style="text-align: center;">Omnicolor Project</h1>
+      <p>This is the Omnicolor web application we built to be used by lead services. Enter text into the search bar and a dropdown menu will appear with suggested results based on your input. The suggested results will include both a simplified color name, and a regular color name that can be used to filter our customer's search results to find the perfect shade for their dream car. We hope the lead services team will choose to integrate our software with theirs to improve customer satisfaction.</p>
+      <div class="car" style="background-color:rgb({{ oc.bgColor.red }}, {{ oc.bgColor.green }}, {{ oc.bgColor.blue }})"></div>
+      <md-autocomplete class="autocompleteWidth"
+          md-selected-item="oc.selectedItem"
+          md-search-text="oc.searchText"
+          md-items="color in oc.colors | filter:oc.searchText"
+          md-item-text="color.name"
+          md-min-length="0"
+          placeholder="Look up a ridiculous color">
+          <md-item-template>
+            <div flex>
+              <span class="pull-left" md-highlight-text="oc.searchText" md-highlight-flags="^i">
+                Actual: {{color.name | capitalize }}
+              </span>
+              <i class="fa fa-square fa-2x pull-left color-sample nother-color-sample"
+              style="color:rgb({{ color.red }}, {{ color.green }}, {{ color.blue }});"></i>
+              <i class="fa fa-square fa-2x pull-right color-sample"
+              style="{{'color:' + color.simplifiedColor;}}"></i>
+              <span class="pull-right">
+                Simple: {{color.simplifiedColor}}
+              </span>
+            </div>
+          </md-item-template>
+        </md-autocomplete>
+    </div>
+</md-content>

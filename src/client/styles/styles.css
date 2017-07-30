@@ -1,0 +1,27 @@
+.omniwrapper {
+    margin: 1em 0 1em 0;
+}
+
+.color-sample {
+    margin-top: 10px;
+}
+
+.car {
+    background-image: url('../images/car placeholder.png');
+    height: 300px;
+    width: 400px;
+    margin: auto;
+}
+
+.autocompleteWidth {
+  width: 66.7%;
+  margin: auto;
+}
+
+.nother-color-sample {
+    margin-left: 10px;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
